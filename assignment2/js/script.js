@@ -1,4 +1,4 @@
-/* Marz Reservec JavaScript for navigation, forms, recommendations and bill calculator. */
+/* Marz Reserve JavaScript for navigation, forms, recommendations and bill calculator. */
 const restaurants = [
     { id: "yugen", name: "Yūgen Dining", cuisine: "Modern Japanese / Asian fusion", deposit: 60, lowPrice: 180, highPrice: 260, image: "images/yugen.jpg", tags: ["seafood", "gluten-free", "date", "business", "celebration", "luxury"], reason: "A dramatic underground restaurant for premium Japanese-inspired dining and special occasions." },
     { id: "minamishima", name: "Minamishima", cuisine: "Japanese omakase / sushi", deposit: 90, lowPrice: 225, highPrice: 325, image: "images/minamishima.jpg", tags: ["seafood", "date", "business", "solo", "celebration", "luxury"], reason: "Best for guests who want a quiet, precise omakase experience focused on sushi and seafood." },
@@ -189,11 +189,31 @@ function setupReservationForm() {
     });
 }
 
+/* Optional bill estimate calculator. */
+function setupBillCalculator() {
+    const form = byId("bill-form"), output = byId("bill-output"), reserveLink = byId("bill-reserve-link");
+    if (!form || !output) return;
 
+    function updateBill() {
+        const restaurant = restaurantById(value("billRestaurant")) || restaurants[0];
+        const guests = Math.max(1, Number(value("billGuests")) || 1);
+        const perPerson = value("billMenuType") === "premium" ? restaurant.highPrice : restaurant.lowPrice;
+        const food = perPerson * guests, drinks = byId("addDrinks").checked ? 55 * guests : 0, deposit = restaurant.deposit * guests;
+        const service = byId("addService").checked ? (food + drinks) * 0.1 : 0, total = food + drinks + service;
+        const rows = [["Restaurant", restaurant.name], ["Guests", guests], ["Food estimate", money(food)], ["Beverage estimate", money(drinks)], ["Service estimate", money(service)], ["Deposit due at booking", money(deposit)], ["Estimated balance later", money(Math.max(0, total - deposit))], ["Total guide", money(total), " total"]];
+
+        output.innerHTML = rows.map(([label, amount, extra = ""]) => `<div class="bill-line${extra}"><span>${label}</span><strong>${amount}</strong></div>`).join("");
+        if (reserveLink) reserveLink.href = `reservation.html?restaurant=${restaurant.id}`;
+    }
+
+    ["input", "change"].forEach((type) => form.addEventListener(type, updateBill));
+    updateBill();
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     setupLayout();
     setupRecommendations();
     setupRegisterValidation();
     setupReservationForm();
+    setupBillCalculator();
 });
