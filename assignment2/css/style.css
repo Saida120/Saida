@@ -1,0 +1,21 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #222; background: #f7f0e3; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+.site-header { background: #2b241d; color: white; padding: 1rem; }
+.brand { display: flex; align-items: center; gap: .6rem; color: white; text-decoration: none; font-weight: bold; }
+.brand-logo { width: 42px; height: 42px; border-radius: 50%; }
+.site-nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.site-nav a { color: white; text-decoration: none; padding: .45rem .7rem; border: 1px solid rgba(255,255,255,.35); }
+.site-nav a:hover, .site-nav a.active { background: #8b6a3f; }
+.nav-toggle { display: none; }
+.section-shell { width: min(1100px, calc(100% - 32px)); margin: auto; }
+.page-hero, .hero { padding: 2rem 0; }
+.container { display: flex; gap: 1rem; align-items: flex-start; }
+main { flex: 3; }
+aside { flex: 1; }
+.card, .info-card, .restaurant-card, .lux-form, .recommend-results { background: #fffaf0; border: 1px solid #d9c6a6; padding: 1rem; margin-bottom: 1rem; }
+.button { display: inline-block; background: #2b241d; color: white; padding: .55rem .9rem; text-decoration: none; border: 0; cursor: pointer; }
+.button-outline { background: white; color: #2b241d; border: 1px solid #2b241d; }
+.site-footer { margin-top: 2rem; padding: 1rem; background: #2b241d; color: white; }
+@media (max-width: 767px) { .container, .site-nav { display: block; } .site-nav a { display: block; margin-top: .35rem; } }
