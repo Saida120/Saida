@@ -8,8 +8,9 @@
     <script src="js/script.js" defer></script>
 </head>
 <body data-page="register">
+    <!-- Shared site header and navigation -->
     <header class="site-header">
-        <a class="brand" href="index.html">
+        <a class="brand" href="index.html" aria-label="Marz Reserve home">
             <img src="images/logo.png" alt="Marz Reserve logo" class="brand-logo">
             <span class="brand-text">Marz Reserve</span>
         </a>
@@ -22,29 +23,92 @@
             <a href="reservation.html" data-page="reservation">Reserve</a>
         </nav>
     </header>
+    <!-- Main content (this page) -->
     <main>
-        <section class="section-shell page-hero"><h1>Create an account</h1><p>Register interest in the platform using the form below.</p></section>
+        <section class="page-hero section-shell reveal">
+            <p class="eyebrow">Create an account</p>
+            <h1>Register for Marz Reserve</h1>
+            <p>Sign up to receive personalised restaurant recommendations and exclusive offers.</p>
+        </section>
+
         <section class="section-shell narrow-section">
-            <form id="register-form" class="lux-form" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php">
-                <h2>Account information</h2>
-                <div id="register-success" class="success-box"></div>
-                <div class="form-grid">
-                    <div class="form-group"><label for="username">Username</label><input type="text" id="username" name="username"><span id="username-error" class="error-message"></span></div>
-                    <div class="form-group"><label for="regEmail">Email address</label><input type="text" id="regEmail" name="email"><span id="regEmail-error" class="error-message"></span></div>
-                    <div class="form-group"><label for="regPhone">Phone number</label><input type="text" id="regPhone" name="phone"><span id="regPhone-error" class="error-message"></span></div>
-                    <div class="form-group"><label for="country">Country/Region</label><select id="country" name="country"><option value="">Please select</option><option>Australia</option><option>New Zealand</option><option>Other</option></select><span id="country-error" class="error-message"></span></div>
-                    <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password"><span id="password-error" class="error-message"></span></div>
-                    <div class="form-group"><label for="confirmPassword">Confirm password</label><input type="password" id="confirmPassword" name="confirmPassword"><span id="confirmPassword-error" class="error-message"></span></div>
+            <form id="register-form" class="lux-form reveal" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+                <div class="form-grid two-col">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" autocomplete="username" placeholder="Your name" required>
+                        <span class="error-message" id="username-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email address</label>
+                        <input type="email" id="regEmail" name="email" autocomplete="email" placeholder="name@example.com" required>
+                        <span class="error-message" id="regEmail-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPhone">Phone number</label>
+                        <input type="tel" id="regPhone" name="phone" autocomplete="tel" placeholder="0412345678" required>
+                        <span class="error-message" id="regPhone-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country / region</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select country / region</option>
+                            <option value="Australia">Australia</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="error-message" id="country-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" autocomplete="new-password" required>
+                        <span class="hint">Minimum 10 characters with upper, lower, number and special character.</span>
+                        <span class="error-message" id="password-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" required>
+                        <span class="error-message" id="confirmPassword-error"></span>
+                    </div>
                 </div>
-                <fieldset class="fieldset-group"><legend>Gender</legend><label><input type="radio" name="gender" value="female"> Female</label><label><input type="radio" name="gender" value="male"> Male</label><label><input type="radio" name="gender" value="other"> Other</label><span id="gender-error" class="error-message"></span></fieldset>
-                <div class="form-group"><label for="dietaryRegister">Dietary preference</label><select id="dietaryRegister" name="dietaryRegister"><option value="">Please select</option><option value="none">None</option><option value="vegan">Vegan</option><option value="vegetarian">Vegetarian</option><option value="halal-friendly">Halal-friendly</option></select><span id="dietaryRegister-error" class="error-message"></span></div>
+
+                <fieldset class="fieldset-group">
+                    <legend>Gender</legend>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="non-binary"> Non-binary</label>
+                    <label><input type="radio" name="gender" value="prefer-not-say"> Prefer not to say</label>
+                    <span class="error-message" id="gender-error"></span>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="dietaryRegister">Dietary preferences</label>
+                    <select id="dietaryRegister" name="dietaryRegister" required>
+                        <option value="">Select dietary preference</option>
+                        <option value="none">None</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="halal-friendly">Halal-friendly</option>
+                        <option value="gluten-free">Gluten-free</option>
+                        <option value="seafood">Seafood focused</option>
+                    </select>
+                    <span class="error-message" id="dietaryRegister-error"></span>
+                </div>
+
+                <div id="register-success" class="success-box" aria-live="polite"></div>
                 <button class="button" type="submit">Submit registration</button>
             </form>
         </section>
     </main>
+    <!-- Footer and note -->
     <footer class="site-footer">
-        <p><strong>Marz Reserve</strong> — Melbourne restaurant discovery and reservations.</p>
-        <p>© 2026 Marz Reserve</p>
+        <div>
+            <strong>Marz Reserve</strong>
+            <p>A premium Melbourne dining guide for discovering curated restaurants, personalised recommendations and seamless table reservations.</p>
+        </div>
+        <p class="footer-note">© 2026 Marz Reserve. All rights reserved.</p>
     </footer>
 </body>
 </html>

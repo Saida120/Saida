@@ -8,8 +8,9 @@
     <script src="js/script.js" defer></script>
 </head>
 <body data-page="recommend">
+    <!-- Site header and navigation -->
     <header class="site-header">
-        <a class="brand" href="index.html">
+        <a class="brand" href="index.html" aria-label="Marz Reserve home">
             <img src="images/logo.png" alt="Marz Reserve logo" class="brand-logo">
             <span class="brand-text">Marz Reserve</span>
         </a>
@@ -22,54 +23,68 @@
             <a href="reservation.html" data-page="reservation">Reserve</a>
         </nav>
     </header>
+    <!-- Main content (this page) -->
     <main>
-        <section class="section-shell page-hero">
-            <h1>Restaurant recommendation</h1>
-            <p>Choose preferences so the platform can suggest suitable restaurants.</p>
+        <section class="page-hero section-shell reveal">
+            <p class="eyebrow">Rule-based recommendation</p>
+            <h1>Find a restaurant by preference</h1>
+            <p>Choose a dietary preference, budget and dining purpose.</p>
         </section>
+
         <section class="section-shell form-layout">
-            <form id="recommendation-form" class="lux-form">
+            <form id="recommendation-form" class="lux-form reveal" novalidate>
+                <h2>Your preferences</h2>
                 <div class="form-group">
                     <label for="dietaryPreference">Dietary preference</label>
-                    <select id="dietaryPreference" name="dietaryPreference">
-                        <option value="">Please select</option>
+                    <select id="dietaryPreference" name="dietaryPreference" required>
+                        <option value="">Select one</option>
                         <option value="none">None</option>
                         <option value="vegan">Vegan</option>
                         <option value="vegetarian">Vegetarian</option>
-                        <option value="halal-friendly">Halal-friendly</option>
-                        <option value="gluten-free">Gluten-free</option>
+                        <option value="halal-friendly">Halal-friendly / vegetarian-safe</option>
+                        <option value="seafood">Seafood focused</option>
+                        <option value="gluten-free">Gluten-free friendly</option>
                     </select>
-                    <span id="dietaryPreference-error" class="error-message"></span>
+                    <span class="error-message" id="dietaryPreference-error"></span>
                 </div>
                 <div class="form-group">
                     <label for="budgetRange">Budget range</label>
-                    <select id="budgetRange" name="budgetRange">
-                        <option value="">Please select</option>
-                        <option value="low">Lower budget</option>
-                        <option value="mid">Mid range</option>
-                        <option value="luxury">Luxury</option>
+                    <select id="budgetRange" name="budgetRange" required>
+                        <option value="">Select one</option>
+                        <option value="low">Under $90 per person</option>
+                        <option value="mid">$90–$150 per person</option>
+                        <option value="luxury">$150+ per person</option>
                     </select>
-                    <span id="budgetRange-error" class="error-message"></span>
+                    <span class="error-message" id="budgetRange-error"></span>
                 </div>
                 <div class="form-group">
                     <label for="diningPurpose">Dining purpose</label>
-                    <select id="diningPurpose" name="diningPurpose">
-                        <option value="">Please select</option>
-                        <option value="family">Family</option>
-                        <option value="date">Date</option>
-                        <option value="business">Business</option>
+                    <select id="diningPurpose" name="diningPurpose" required>
+                        <option value="">Select one</option>
+                        <option value="date">Date night</option>
+                        <option value="business">Business dinner</option>
+                        <option value="family">Family or group dinner</option>
                         <option value="celebration">Celebration</option>
+                        <option value="solo">Solo food experience</option>
                     </select>
-                    <span id="diningPurpose-error" class="error-message"></span>
+                    <span class="error-message" id="diningPurpose-error"></span>
                 </div>
-                <button class="button" type="submit">Find restaurants</button>
+                <button class="button" type="submit">Show recommendations</button>
             </form>
-            <div id="recommendation-results" class="recommend-results"><p>Select your preferences to see a recommendation.</p></div>
+            <div class="recommend-results reveal" aria-live="polite">
+                <h2>Recommended restaurants</h2>
+                <p class="muted">Your matched restaurants will appear here with a reason and a direct reservation button.</p>
+                <div id="recommendation-results" class="result-stack"></div>
+            </div>
         </section>
     </main>
+    <!-- footer and note -->
     <footer class="site-footer">
-        <p><strong>Marz Reserve</strong> — Melbourne restaurant discovery and reservations.</p>
-        <p>© 2026 Marz Reserve</p>
+        <div>
+            <strong>Marz Reserve</strong>
+            <p>A premium Melbourne dining guide for discovering curated restaurants, personalised recommendations and seamless table reservations.</p>
+        </div>
+        <p class="footer-note">© 2026 Marz Reserve. All rights reserved.</p>
     </footer>
 </body>
 </html>

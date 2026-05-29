@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marz Reserve | Marz Reserve</title>
+    <title>Marz Reserve | Fine Dining Reservations</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
 </head>
 <body data-page="home">
+    <!-- Site header and navigation -->
     <header class="site-header">
-        <a class="brand" href="index.html">
+        <a class="brand" href="index.html" aria-label="Marz Reserve home">
             <img src="images/logo.png" alt="Marz Reserve logo" class="brand-logo">
             <span class="brand-text">Marz Reserve</span>
         </a>
@@ -22,29 +23,66 @@
             <a href="reservation.html" data-page="reservation">Reserve</a>
         </nav>
     </header>
+    <!-- Main content (this page) -->
     <main>
         <section class="hero section-shell">
-            <div>
-                <p class="eyebrow">Curated dining in Melbourne</p>
-                <h1>Find the right table for your next booking.</h1>
-                <p>Marz Reserve helps couples, families, professionals, tourists and local diners compare restaurants and make reservation requests.</p>
-                <a class="button" href="restaurants.html">Browse restaurants</a>
-                <a class="button button-outline" href="recommend.html">Get a recommendation</a>
+            <div class="hero-copy reveal">
+                <p class="eyebrow">Curated fine dining in Melbourne</p>
+                <h1>Find the right table for the night you actually want.</h1>
+                <p class="hero-lead">Marz Reserve is a boutique restaurant discovery and reservation platform for couples, professionals, tourists, families and food-focused locals who want a polished booking experience without scrolling through endless options.</p>
+                <div class="hero-actions">
+                    <a class="button" href="restaurants.html">Browse restaurants</a>
+                    <a class="button button-outline" href="recommend.html">Get a recommendation</a>
+                </div>
             </div>
-            <div class="hero-panel">
-                <img src="images/yugen.jpg" alt="Warm luxury dining room at Yūgen Dining">
+            <div class="hero-panel reveal">
+                <img src="images/yugen.jpg" alt="Warm luxury dining room at Yūgen Dining with a chandelier">
+                <div class="floating-card">
+                    <span>Tonight’s mood</span>
+                    <strong>Elegant, warm, carefully chosen.</strong>
+                </div>
             </div>
         </section>
+
         <section class="section-shell intro-grid">
-            <article class="info-card"><h2>Purpose</h2><p>To make dining discovery quicker by showing atmosphere, price, deposits and useful booking details.</p></article>
-            <article class="info-card"><h2>Values</h2><p>Convenience, variety, accessibility, transparent information and a polished reservation experience.</p></article>
-            <article class="info-card"><h2>Services</h2><p>Restaurant browsing, recommendations, account registration and reservation forms.</p></article>
-            <article class="info-card"><h2>Featured</h2><p>Start with a venue that matches the occasion, budget and dietary needs.</p></article>
+            <article class="info-card reveal">
+                <h2>Purpose</h2>
+                <p>To help users discover suitable fine dining venues, compare atmosphere and price, receive practical recommendations and move directly into a reservation form with the restaurant already selected.</p>
+            </article>
+            <article class="info-card reveal">
+                <h2>Values</h2>
+                <p>Convenience, variety, accessibility, transparent deposits, readable information and a calm visual design that matches the premium dining experience.</p>
+            </article>
+            <article class="info-card reveal">
+                <h2>Services</h2>
+                <p>Restaurant browsing, rule-based recommendations, account registration, reservation requests, deposit method selection and an estimated bill calculator.</p>
+            </article>
+        </section>
+
+        <section class="section-shell split-section">
+            <div class="reveal">
+                <p class="eyebrow">Featured booking</p>
+                <h2>Start with a restaurant that matches your occasion.</h2>
+                <p>Each venue profile includes cuisine type, sample signature dishes, deposit amount, price range, image and a short description so users can decide quickly.</p>
+            </div>
+            <div class="mini-feature reveal">
+                <img src="images/nomad.jpg" alt="Nomad Melbourne dining room with bar and open kitchen">
+                <div>
+
+                    <h3>Nomad</h3>
+                    <p>Shared menus, warm lighting and a Flinders Lane location make it an easy choice for business meals, pre-theatre dining and group dinners.</p>
+                    <a href="reservation.html?restaurant=nomad">Reserve Nomad</a>
+                </div>
+            </div>
         </section>
     </main>
+    <!-- footer andnote -->
     <footer class="site-footer">
-        <p><strong>Marz Reserve</strong> — Melbourne restaurant discovery and reservations.</p>
-        <p>© 2026 Marz Reserve</p>
+        <div>
+            <strong>Marz Reserve</strong>
+            <p>A premium Melbourne dining guide for discovering curated restaurants, personalised recommendations and seamless table reservations.</p>
+        </div>
+        <p class="footer-note">© 2026 Marz Reserve. All rights reserved.</p>
     </footer>
 </body>
 </html>

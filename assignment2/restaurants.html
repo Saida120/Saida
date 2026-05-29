@@ -8,8 +8,9 @@
     <script src="js/script.js" defer></script>
 </head>
 <body data-page="restaurants">
+    <!-- Site header and navigation -->
     <header class="site-header">
-        <a class="brand" href="index.html">
+        <a class="brand" href="index.html" aria-label="Marz Reserve home">
             <img src="images/logo.png" alt="Marz Reserve logo" class="brand-logo">
             <span class="brand-text">Marz Reserve</span>
         </a>
@@ -22,96 +23,131 @@
             <a href="reservation.html" data-page="reservation">Reserve</a>
         </nav>
     </header>
+    <!-- Main content (this page) -->
     <main>
-        <section class="section-shell page-hero">
-            <h1>Restaurants</h1>
-            <p>Compare selected Melbourne restaurants by cuisine, price range, deposit and dining mood.</p>
+        <section class="page-hero section-shell reveal">
+            <p class="eyebrow">Six curated venues</p>
+            <h1>Restaurant listings</h1>
+            <p>Browse the selected Melbourne restaurants, compare cuisine, prices, deposits and atmosphere, then reserve directly from the card.</p>
         </section>
-        <section class="section-shell restaurant-grid">
-
-            <article class="restaurant-card" data-restaurant-card="yugen">
-                <div class="card-image-wrap"><img src="images/yugen.jpg" alt="Yūgen Dining restaurant interior"><span class="price-pill">$180–$260 per person</span></div>
-                <div class="card-body">
-                    <p class="eyebrow">Modern Japanese / Asian fusion</p>
-                    <h2>Yūgen Dining</h2>
-                    <p>Warm underground dining room, polished service and dramatic lighting for special nights in Melbourne.</p>
-                    <h3>Signature dishes</h3>
-                    <ul class="dish-list"><li>Sashimi platter — $48</li><li>Wagyu main — $68</li><li>Matcha dessert — $18</li></ul>
-                    <p class="deposit">Reservation deposit: $60</p>
-                    <a class="button button-outline" href="reservation.html?restaurant=yugen">Reserve Yūgen Dining</a>
-                </div>
-            </article>
-
-            <article class="restaurant-card" data-restaurant-card="minamishima">
-                <div class="card-image-wrap"><img src="images/minamishima.jpg" alt="Minamishima restaurant interior"><span class="price-pill">$225–$325 per person</span></div>
-                <div class="card-body">
-                    <p class="eyebrow">Japanese omakase / sushi</p>
-                    <h2>Minamishima</h2>
-                    <p>A quiet omakase experience focused on sushi, seafood and careful presentation.</p>
-                    <h3>Signature dishes</h3>
-                    <ul class="dish-list"><li>Omakase menu — $225</li><li>Premium sushi course — $95</li><li>Dessert course — $22</li></ul>
-                    <p class="deposit">Reservation deposit: $90</p>
-                    <a class="button button-outline" href="reservation.html?restaurant=minamishima">Reserve Minamishima</a>
-                </div>
-            </article>
-
-            <article class="restaurant-card" data-restaurant-card="nomad">
-                <div class="card-image-wrap"><img src="images/nomad.jpg" alt="Nomad restaurant interior"><span class="price-pill">$95–$170 per person</span></div>
-                <div class="card-body">
-                    <p class="eyebrow">Contemporary Australian / Mediterranean</p>
-                    <h2>Nomad</h2>
-                    <p>Shared menus, warm lighting and a Flinders Lane location for groups and business meals.</p>
-                    <h3>Signature dishes</h3>
-                    <ul class="dish-list"><li>Wood-fired flatbread — $16</li><li>Kingfish — $32</li><li>Lamb shoulder — $58</li></ul>
-                    <p class="deposit">Reservation deposit: $45</p>
-                    <a class="button button-outline" href="reservation.html?restaurant=nomad">Reserve Nomad</a>
-                </div>
-            </article>
-
-            <article class="restaurant-card" data-restaurant-card="ides">
-                <div class="card-image-wrap"><img src="images/ides.jpg" alt="Ides restaurant interior"><span class="price-pill">$55–$166 per person</span></div>
-                <div class="card-body">
-                    <p class="eyebrow">Modern Australian tasting menu</p>
-                    <h2>Ides</h2>
-                    <p>A creative, moody tasting-menu restaurant suited to diners who enjoy a modern atmosphere.</p>
-                    <h3>Signature dishes</h3>
-                    <ul class="dish-list"><li>Steak Night menu — $55</li><li>The Six tasting menu — $166</li><li>Shaking Beef — included</li></ul>
-                    <p class="deposit">Reservation deposit: $50</p>
-                    <a class="button button-outline" href="reservation.html?restaurant=ides">Reserve Ides</a>
-                </div>
-            </article>
-
-            <article class="restaurant-card" data-restaurant-card="lona-misa">
-                <div class="card-image-wrap"><img src="images/lona-misa.jpg" alt="Lona Misa restaurant interior"><span class="price-pill">$45–$90 per person</span></div>
-                <div class="card-body">
-                    <p class="eyebrow">Vegan / Latin-inspired dining</p>
-                    <h2>Lona Misa</h2>
-                    <p>Colourful plant-based dining for vegan, vegetarian and mixed-diet groups.</p>
-                    <h3>Signature dishes</h3>
-                    <ul class="dish-list"><li>Smoked watermelon tostada — $14</li><li>Oyster mushroom ceviche — $24</li><li>Vegan moqueca — $34</li></ul>
-                    <p class="deposit">Reservation deposit: $30</p>
-                    <a class="button button-outline" href="reservation.html?restaurant=lona-misa">Reserve Lona Misa</a>
-                </div>
-            </article>
-
-            <article class="restaurant-card" data-restaurant-card="il-bacaro">
-                <div class="card-image-wrap"><img src="images/il-bacaro.jpg" alt="Il Bacaro restaurant interior"><span class="price-pill">$85–$150 per person</span></div>
-                <div class="card-body">
-                    <p class="eyebrow">Italian / Venetian</p>
-                    <h2>Il Bacaro</h2>
-                    <p>Classic Melbourne Italian dining with white tablecloths and a refined city atmosphere.</p>
-                    <h3>Signature dishes</h3>
-                    <ul class="dish-list"><li>Two course set menu — $85</li><li>Three course set menu — $99</li><li>Tagliatelle prawns — $42</li></ul>
-                    <p class="deposit">Reservation deposit: $45</p>
-                    <a class="button button-outline" href="reservation.html?restaurant=il-bacaro">Reserve Il Bacaro</a>
-                </div>
-            </article>
-
+        <section class="section-shell restaurant-grid" aria-label="Restaurant listings">
+                <article class="restaurant-card reveal" data-restaurant-card="yugen">
+                    <div class="card-image-wrap">
+                        <img src="images/yugen.jpg" alt="Dimly lit Yūgen Dining restaurant interior with chandelier and warm lighting" loading="lazy">
+                        <span class="price-pill">$180–$260 per person</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="eyebrow">Modern Japanese / Asian fusion</p>
+                        <h2>Yūgen Dining</h2>
+                        <p class="location">605 Chapel Street, South Yarra</p>
+                        <p>Yūgen Dining feels dramatic from the moment guests step underground: warm stone, low light, sculptural details and a glowing chandelier create a polished special-occasion atmosphere. The menu blends Japanese technique with modern Asian flavours, making it suitable for celebrations, date nights and diners who want a refined experience with sashimi, wagyu and carefully plated courses.</p>
+                        <h3>Signature dishes</h3>
+                        <ul class="dish-list">
+                            <li>Chef’s Experience — $180</li><li>Sashimi Platter — $75</li><li>Grilled Edamame — $11</li>
+                        </ul>
+                        <p class="deposit"><strong>Reservation deposit:</strong> $60</p>
+                        <a class="button button-outline" href="reservation.html?restaurant=yugen">Reserve Yūgen Dining</a>
+                    </div>
+                </article>
+                <article class="restaurant-card reveal" data-restaurant-card="minamishima">
+                    <div class="card-image-wrap">
+                        <img src="images/minamishima.jpg" alt="Sushi chef preparing omakase at the Minamishima counter while guests watch" loading="lazy">
+                        <span class="price-pill">$225–$325 per person</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="eyebrow">Japanese omakase / sushi</p>
+                        <h2>Minamishima</h2>
+                        <p class="location">4 Lord Street, Richmond</p>
+                        <p>Minamishima is designed for guests who want a calm, precise and intimate sushi experience. Rather than a busy à la carte format, the omakase approach allows the chef to guide the meal through seasonal seafood, carefully prepared nigiri and polished service. It is best suited to serious food lovers, business dinners and quiet celebrations.</p>
+                        <h3>Signature dishes</h3>
+                        <ul class="dish-list">
+                            <li>Chef-led omakase — from $225</li><li>Premium sushi counter experience — from $325</li><li>Seasonal sashimi course — included in omakase</li>
+                        </ul>
+                        <p class="deposit"><strong>Reservation deposit:</strong> $90</p>
+                        <a class="button button-outline" href="reservation.html?restaurant=minamishima">Reserve Minamishima</a>
+                    </div>
+                </article>
+                <article class="restaurant-card reveal" data-restaurant-card="nomad">
+                    <div class="card-image-wrap">
+                        <img src="images/nomad.jpg" alt="Nomad Melbourne dining room with bar seating, warm lighting and open kitchen" loading="lazy">
+                        <span class="price-pill">$95–$170 per person</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="eyebrow">Contemporary Australian / Mediterranean</p>
+                        <h2>Nomad</h2>
+                        <p class="location">187 Flinders Lane, Melbourne CBD</p>
+                        <p>Nomad is a stylish Flinders Lane choice for guests who want generous shared dining without losing the feeling of fine dining. The warm interior, open kitchen and polished service make it flexible for pre-theatre meals, group dinners, business bookings and relaxed celebrations. Its menu leans into wood-fired cooking, produce-driven plates and bold Mediterranean flavours.</p>
+                        <h3>Signature dishes</h3>
+                        <ul class="dish-list">
+                            <li>Express shared menu — $95</li><li>Feast shared menu — $115</li><li>Experience shared menu — $170</li>
+                        </ul>
+                        <p class="deposit"><strong>Reservation deposit:</strong> $45</p>
+                        <a class="button button-outline" href="reservation.html?restaurant=nomad">Reserve Nomad</a>
+                    </div>
+                </article>
+                <article class="restaurant-card reveal" data-restaurant-card="ides">
+                    <div class="card-image-wrap">
+                        <img src="images/ides.jpg" alt="Moody Ides restaurant bar with dark stone counter and bottles under warm lights" loading="lazy">
+                        <span class="price-pill">$55–$166 per person</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="eyebrow">Modern Australian tasting menu</p>
+                        <h2>Ides</h2>
+                        <p class="location">92 Smith Street, Collingwood</p>
+                        <p>Ides has a darker, moodier energy than a traditional formal restaurant, making it feel modern and slightly unexpected. The experience suits guests who enjoy creative menus, a strong bar atmosphere and a restaurant that feels confident without being stiff. It works well for adventurous dates, small groups and diners who like surprise-driven courses.</p>
+                        <h3>Signature dishes</h3>
+                        <ul class="dish-list">
+                            <li>Steak Night menu — $55</li><li>The Six tasting menu — $166</li><li>Shaking Beef set item — included in Steak Night</li>
+                        </ul>
+                        <p class="deposit"><strong>Reservation deposit:</strong> $50</p>
+                        <a class="button button-outline" href="reservation.html?restaurant=ides">Reserve Ides</a>
+                    </div>
+                </article>
+                <article class="restaurant-card reveal" data-restaurant-card="lona-misa">
+                    <div class="card-image-wrap">
+                        <img src="images/lona-misa.jpg" alt="Colourful Lona Misa dining room with red seating, green walls and framed artwork" loading="lazy">
+                        <span class="price-pill">$45–$90 per person</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="eyebrow">Vegan / Latin-inspired dining</p>
+                        <h2>Lona Misa</h2>
+                        <p class="location">234 Toorak Road, South Yarra</p>
+                        <p>Lona Misa brings a brighter and more playful fine dining mood to the platform. Its plant-based menu, Latin influence and colourful room make it a strong option for vegan guests, vegetarian diners and groups with mixed dietary needs. The venue feels social and expressive while still offering a polished restaurant experience for birthdays, casual dates and friend dinners.</p>
+                        <h3>Signature dishes</h3>
+                        <ul class="dish-list">
+                            <li>Smoked watermelon tostada — $14</li><li>Oyster mushroom ceviche — $24</li><li>Vegan moqueca — $34</li>
+                        </ul>
+                        <p class="deposit"><strong>Reservation deposit:</strong> $30</p>
+                        <a class="button button-outline" href="reservation.html?restaurant=lona-misa">Reserve Lona Misa</a>
+                    </div>
+                </article>
+                <article class="restaurant-card reveal" data-restaurant-card="il-bacaro">
+                    <div class="card-image-wrap">
+                        <img src="images/il-bacaro.jpg" alt="Il Bacaro restaurant interior with white tablecloths, wine display and bar seating" loading="lazy">
+                        <span class="price-pill">$85–$150 per person</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="eyebrow">Italian / Venetian</p>
+                        <h2>Il Bacaro</h2>
+                        <p class="location">168–170 Little Collins Street, Melbourne CBD</p>
+                        <p>Il Bacaro gives the platform a classic Melbourne dining option with white tablecloths, Venetian influence and a romantic city atmosphere. It suits couples, professionals and visitors who want elegant Italian food in the CBD without the restaurant feeling overly loud or casual. The menu is useful for guests who prefer familiar flavours presented in a refined way.</p>
+                        <h3>Signature dishes</h3>
+                        <ul class="dish-list">
+                            <li>Two course set menu — $85</li><li>Three course set menu — $99</li><li>Tagliatelle with prawns — $42</li>
+                        </ul>
+                        <p class="deposit"><strong>Reservation deposit:</strong> $45</p>
+                        <a class="button button-outline" href="reservation.html?restaurant=il-bacaro">Reserve Il Bacaro</a>
+                    </div>
+                </article>
         </section>
     </main>
+    <!-- Footer and note -->
     <footer class="site-footer">
-        <p><strong>Marz Reserve</strong> — Melbourne restaurant discovery and reservations.</p>
-        <p>© 2026 Marz Reserve</p>
+        <div>
+            <strong>Marz Reserve</strong>
+            <p>A premium Melbourne dining guide for discovering curated restaurants, personalised recommendations and seamless table reservations.</p>
+        </div>
+        <p class="footer-note">© 2026 Marz Reserve. All rights reserved.</p>
     </footer>
 </body>
 </html>

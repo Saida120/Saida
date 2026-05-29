@@ -8,8 +8,9 @@
     <script src="js/script.js" defer></script>
 </head>
 <body data-page="reservation">
+    <!-- Site header and navigation -->
     <header class="site-header">
-        <a class="brand" href="index.html">
+        <a class="brand" href="index.html" aria-label="Marz Reserve home">
             <img src="images/logo.png" alt="Marz Reserve logo" class="brand-logo">
             <span class="brand-text">Marz Reserve</span>
         </a>
@@ -22,35 +23,122 @@
             <a href="reservation.html" data-page="reservation">Reserve</a>
         </nav>
     </header>
+    <!-- Main content (this page) -->
     <main>
-        <section class="section-shell page-hero"><h1>Reserve a table</h1><p>Choose a restaurant, booking time, deposit method and payment details.</p></section>
+        <section class="page-hero section-shell reveal">
+            <p class="eyebrow">Secure your table</p>
+            <h1>Reservation request</h1>
+            <p>Choose or change your restaurant, confirm guest details and select a deposit method.</p>
+        </section>
+
         <section class="section-shell narrow-section">
-            <form id="reservation-form" class="lux-form" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php">
-                <div id="reservation-success" class="success-box"></div>
-                <div class="form-grid">
-                    <div class="form-group"><label for="fullName">Full name</label><input type="text" id="fullName" name="fullName"><span id="fullName-error" class="error-message"></span></div>
-                    <div class="form-group"><label for="bookingEmail">Email address</label><input type="text" id="bookingEmail" name="bookingEmail"><span id="bookingEmail-error" class="error-message"></span></div>
-                    <div class="form-group"><label for="bookingPhone">Phone number</label><input type="text" id="bookingPhone" name="bookingPhone"><span id="bookingPhone-error" class="error-message"></span></div>
-                    <div class="form-group"><label for="restaurantSelect">Restaurant</label><select id="restaurantSelect" name="restaurantSelect"><option value="">Please select</option><option value="yugen">Yūgen Dining</option><option value="minamishima">Minamishima</option><option value="nomad">Nomad</option><option value="ides">Ides</option><option value="lona-misa">Lona Misa</option><option value="il-bacaro">Il Bacaro</option></select><span id="restaurantSelect-error" class="error-message"></span></div>
-                    <div class="form-group"><label for="reservationDateTime">Reservation date and time</label><input type="datetime-local" id="reservationDateTime" name="reservationDateTime"><span id="reservationDateTime-error" class="error-message"></span></div>
-                    <div class="form-group"><label for="peopleCount">Number of people</label><input type="number" id="peopleCount" name="peopleCount" min="1"><span id="peopleCount-error" class="error-message"></span></div>
+            <form id="reservation-form" class="lux-form reveal" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate>
+                <div class="form-grid two-col">
+                    <div class="form-group">
+                        <label for="fullName">Full name</label>
+                        <input type="text" id="fullName" name="fullName" autocomplete="name" required>
+                        <span class="error-message" id="fullName-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingEmail">Email address</label>
+                        <input type="email" id="bookingEmail" name="email" autocomplete="email" required>
+                        <span class="error-message" id="bookingEmail-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingPhone">Phone number</label>
+                        <input type="tel" id="bookingPhone" name="phone" autocomplete="tel" placeholder="0412345678" required>
+                        <span class="error-message" id="bookingPhone-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="restaurantSelect">Restaurant selection</label>
+                        <select id="restaurantSelect" name="restaurant" required>
+                            <option value="">Select a restaurant</option>
+                            <option value="yugen">Yūgen Dining</option>
+                            <option value="minamishima">Minamishima</option>
+                            <option value="nomad">Nomad</option>
+                            <option value="ides">Ides</option>
+                            <option value="lona-misa">Lona Misa</option>
+                            <option value="il-bacaro">Il Bacaro</option>
+                        </select>
+                        <span class="error-message" id="restaurantSelect-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="reservationDateTime">Reservation date and time</label>
+                        <input type="datetime-local" id="reservationDateTime" name="reservationDateTime" required>
+                        <span class="error-message" id="reservationDateTime-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="peopleCount">Number of people</label>
+                        <input type="number" id="peopleCount" name="people" min="1" step="1" required>
+                        <span class="error-message" id="peopleCount-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="depositAmount">Deposit amount</label>
+                        <input type="text" id="depositAmount" name="depositAmount" readonly value="Select restaurant first">
+                    </div>
+                    <div class="form-group">
+                        <label for="depositMethod">Deposit method</label>
+                        <select id="depositMethod" name="depositMethod" required>
+                            <option value="">Select method</option>
+                            <option value="voucher">Voucher</option>
+                            <option value="online">Online payment</option>
+                        </select>
+                        <span class="error-message" id="depositMethod-error"></span>
+                    </div>
                 </div>
-                <div class="form-group"><label for="specialRequests">Special requests</label><textarea id="specialRequests" name="specialRequests" rows="3"></textarea></div>
-                <div class="form-grid">
-                    <div class="form-group"><label for="depositAmount">Deposit amount</label><input type="text" id="depositAmount" name="depositAmount" readonly value="Select restaurant first"></div>
-                    <div class="form-group"><label for="depositMethod">Deposit method</label><select id="depositMethod" name="depositMethod"><option value="">Please select</option><option value="voucher">Voucher</option><option value="online">Online payment</option></select><span id="depositMethod-error" class="error-message"></span></div>
+
+                <div id="voucher-fields" class="conditional-box hidden">
+                    <div class="form-group">
+                        <label for="voucherCode">Voucher code</label>
+                        <input type="text" id="voucherCode" name="voucherCode" inputmode="numeric" maxlength="12" placeholder="12 digit voucher code">
+                        <span class="hint">Voucher code is shown only when Voucher is selected.</span>
+                    </div>
                 </div>
-                <div id="voucher-fields" class="conditional-box hidden"><label for="voucherCode">Voucher code</label><input type="text" id="voucherCode" name="voucherCode" placeholder="12 digit voucher code"></div>
-                <div id="card-fields" class="conditional-box hidden"><div class="form-grid"><div class="form-group"><label for="cardType">Card type</label><select id="cardType" name="cardType"><option value="">Please select</option><option value="visa">Visa</option><option value="mastercard">Mastercard</option><option value="amex">Amex</option></select><span id="cardType-error" class="error-message"></span></div><div class="form-group"><label for="cardNumber">Card number</label><input type="text" id="cardNumber" name="cardNumber"><span id="cardNumber-error" class="error-message"></span></div></div></div>
-                <label class="inline-check"><input type="checkbox" id="sameAsEmail"> Same as email address</label>
-                <div class="form-group"><label for="billingEmail">Billing email address</label><input type="text" id="billingEmail" name="billingEmail"><span id="billingEmail-error" class="error-message"></span></div>
+
+                <div id="card-fields" class="conditional-box hidden">
+                    <div class="form-grid two-col">
+                        <div class="form-group">
+                            <label for="cardType">Card type</label>
+                            <select id="cardType" name="cardType">
+                                <option value="">Select card type</option>
+                                <option value="visa">Visa</option>
+                                <option value="mastercard">Mastercard</option>
+                                <option value="amex">Amex</option>
+                            </select>
+                            <span class="error-message" id="cardType-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardNumber">Credit card number</label>
+                            <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" placeholder="Use fake card information only">
+                            <span class="error-message" id="cardNumber-error"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="billingEmail">Billing email address</label>
+                    <input type="email" id="billingEmail" name="billingEmail" autocomplete="email" required>
+                    <label class="inline-check"><input type="checkbox" id="sameAsEmail"> Same as email address</label>
+                    <span class="error-message" id="billingEmail-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="specialRequests">Special requests <span class="optional">optional</span></label>
+                    <textarea id="specialRequests" name="specialRequests" rows="4" placeholder="Dietary needs, seating preference or celebration note"></textarea>
+                </div>
+
+                <div id="reservation-success" class="success-box" aria-live="polite"></div>
                 <button class="button" type="submit">Submit reservation</button>
             </form>
         </section>
     </main>
+    <!-- Footer and note -->
     <footer class="site-footer">
-        <p><strong>Marz Reserve</strong> — Melbourne restaurant discovery and reservations.</p>
-        <p>© 2026 Marz Reserve</p>
+        <div>
+            <strong>Marz Reserve</strong>
+            <p>A premium Melbourne dining guide for discovering curated restaurants, personalised recommendations and seamless table reservations.</p>
+        </div>
+        <p class="footer-note">© 2026 Marz Reserve. All rights reserved.</p>
     </footer>
 </body>
 </html>
