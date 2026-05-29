@@ -22,7 +22,51 @@
             <a href="reservation.html" data-page="reservation">Reserve</a>
         </nav>
     </header>
-    <main class="section-shell page-hero"><h1>Restaurant recommendation</h1><p>This page will match diners to restaurants by preference, budget and purpose.</p></main>
+    <main>
+        <section class="section-shell page-hero">
+            <h1>Restaurant recommendation</h1>
+            <p>Choose preferences so the platform can suggest suitable restaurants.</p>
+        </section>
+        <section class="section-shell form-layout">
+            <form id="recommendation-form" class="lux-form">
+                <div class="form-group">
+                    <label for="dietaryPreference">Dietary preference</label>
+                    <select id="dietaryPreference" name="dietaryPreference">
+                        <option value="">Please select</option>
+                        <option value="none">None</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="halal-friendly">Halal-friendly</option>
+                        <option value="gluten-free">Gluten-free</option>
+                    </select>
+                    <span id="dietaryPreference-error" class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="budgetRange">Budget range</label>
+                    <select id="budgetRange" name="budgetRange">
+                        <option value="">Please select</option>
+                        <option value="low">Lower budget</option>
+                        <option value="mid">Mid range</option>
+                        <option value="luxury">Luxury</option>
+                    </select>
+                    <span id="budgetRange-error" class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="diningPurpose">Dining purpose</label>
+                    <select id="diningPurpose" name="diningPurpose">
+                        <option value="">Please select</option>
+                        <option value="family">Family</option>
+                        <option value="date">Date</option>
+                        <option value="business">Business</option>
+                        <option value="celebration">Celebration</option>
+                    </select>
+                    <span id="diningPurpose-error" class="error-message"></span>
+                </div>
+                <button class="button" type="submit">Find restaurants</button>
+            </form>
+            <div class="recommend-results"><p>The recommendation result area will be added here.</p></div>
+        </section>
+    </main>
     <footer class="site-footer">
         <p><strong>Marz Reserve</strong> — Melbourne restaurant discovery and reservations.</p>
         <p>© 2026 Marz Reserve</p>

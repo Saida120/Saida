@@ -22,7 +22,26 @@
             <a href="reservation.html" data-page="reservation">Reserve</a>
         </nav>
     </header>
-    <main class="section-shell page-hero"><h1>Create an account</h1><p>The account form will be added here.</p></main>
+    <main>
+        <section class="section-shell page-hero"><h1>Create an account</h1><p>Register interest in the platform using the form below.</p></section>
+        <section class="section-shell narrow-section">
+            <form id="register-form" class="lux-form" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php">
+                <h2>Account information</h2>
+                <div id="register-success" class="success-box"></div>
+                <div class="form-grid">
+                    <div class="form-group"><label for="username">Username</label><input type="text" id="username" name="username"><span id="username-error" class="error-message"></span></div>
+                    <div class="form-group"><label for="regEmail">Email address</label><input type="text" id="regEmail" name="email"><span id="regEmail-error" class="error-message"></span></div>
+                    <div class="form-group"><label for="regPhone">Phone number</label><input type="text" id="regPhone" name="phone"><span id="regPhone-error" class="error-message"></span></div>
+                    <div class="form-group"><label for="country">Country/Region</label><select id="country" name="country"><option value="">Please select</option><option>Australia</option><option>New Zealand</option><option>Other</option></select><span id="country-error" class="error-message"></span></div>
+                    <div class="form-group"><label for="password">Password</label><input type="password" id="password" name="password"><span id="password-error" class="error-message"></span></div>
+                    <div class="form-group"><label for="confirmPassword">Confirm password</label><input type="password" id="confirmPassword" name="confirmPassword"><span id="confirmPassword-error" class="error-message"></span></div>
+                </div>
+                <fieldset class="fieldset-group"><legend>Gender</legend><label><input type="radio" name="gender" value="female"> Female</label><label><input type="radio" name="gender" value="male"> Male</label><label><input type="radio" name="gender" value="other"> Other</label><span id="gender-error" class="error-message"></span></fieldset>
+                <div class="form-group"><label for="dietaryRegister">Dietary preference</label><select id="dietaryRegister" name="dietaryRegister"><option value="">Please select</option><option value="none">None</option><option value="vegan">Vegan</option><option value="vegetarian">Vegetarian</option><option value="halal-friendly">Halal-friendly</option></select><span id="dietaryRegister-error" class="error-message"></span></div>
+                <button class="button" type="submit">Submit registration</button>
+            </form>
+        </section>
+    </main>
     <footer class="site-footer">
         <p><strong>Marz Reserve</strong> — Melbourne restaurant discovery and reservations.</p>
         <p>© 2026 Marz Reserve</p>

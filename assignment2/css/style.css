@@ -27,3 +27,14 @@ aside { flex: 1; }
 .dish-list { padding-left: 1.2rem; }
 .deposit { font-weight: bold; }
 @media (max-width: 767px) { .restaurant-grid, .intro-grid { grid-template-columns: 1fr; } }
+
+.form-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: start; padding-bottom: 2rem; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group, .textinput { display: flex; flex-direction: column; gap: .35rem; margin-bottom: .8rem; }
+label, legend { font-weight: bold; }
+input, select, textarea { padding: .7rem; border: 1px solid #b9a98b; font: inherit; }
+fieldset { border: 1px solid #d9c6a6; margin: 0 0 1rem; }
+.fieldset-group label { margin-right: 1rem; }
+.error-message { color: #9b1d2d; font-weight: bold; min-height: 1rem; }
+.hidden { display: none; }
+@media (max-width: 900px) { .form-layout, .form-grid { grid-template-columns: 1fr; } }
